@@ -59,7 +59,10 @@ let Ball = function(x,y,r){
         if(this.x===this.r||(this.x+this.r)===500){
             ballSpeedX=(-ballSpeedX);
         }
-        if ((this.y === bar.y + bar.height + this.r && this.x >= bar.x - this.r && this.x <= bar.x + bar.width + this.r) || (this.y === bar.y - this.r) && this.x >= bar.x - this.r && this.x <= bar.x + bar.width + this.r) {
+        if(this.y===this.r){
+            ballSpeedY = (-ballSpeedY);
+        }
+        if ((this.y === bar.y - this.r) && this.x >= bar.x - this.r && this.x <= bar.x + bar.width + this.r) {
             ballSpeedY = (-ballSpeedY);
         }
         if ((this.x === bar.x + bar.width + this.r && this.y >= bar.y - this.r && this.y <= bar.y + bar.height + this.r) || (this.x === bar.x - this.r && this.y >= bar.y - this.r && this.y <= bar.y + bar.height + this.r)) {
